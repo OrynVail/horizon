@@ -1,0 +1,178 @@
+@font-face {
+	font-family: 'Fraunces';
+	src: url('/fonts/fraunces.woff2') format('woff2');
+	font-weight: 400 800;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Newsreader';
+	src: url('/fonts/newsreader.woff2') format('woff2');
+	font-weight: 300 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Newsreader';
+	src: url('/fonts/newsreader-italic.woff2') format('woff2');
+	font-weight: 400;
+	font-style: italic;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'Spline Sans Mono';
+	src: url('/fonts/spline_sans_mono.woff2') format('woff2');
+	font-weight: 300 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background: var(--k0);
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	background: var(--k0);
+	color: var(--ink);
+	font-family: var(--font-prose);
+	font-size: var(--t-0);
+	font-weight: 400;
+	line-height: 1.65;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+}
+
+::selection {
+	background: var(--k3);
+	color: var(--ink);
+}
+
+:focus-visible {
+	outline: 1px solid var(--k5);
+	outline-offset: 3px;
+}
+
+a {
+	color: inherit;
+	text-decoration-color: var(--k3);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+	transition: color var(--dur-1) var(--ease);
+}
+
+a:hover {
+	color: var(--k5);
+	text-decoration-color: var(--k4);
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+/* The lensed limb: brighter left of centre, the way Doppler beaming brightens one side of a disk. */
+.hz-rule {
+	height: 1px;
+	border: 0;
+	background: linear-gradient(
+		90deg,
+		transparent 0%,
+		var(--k2) 10%,
+		var(--k4) 34%,
+		var(--k3) 58%,
+		var(--k2) 80%,
+		transparent 100%
+	);
+}
+
+.hz-label {
+	font-family: var(--font-data);
+	font-size: var(--t--1);
+	font-weight: 400;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	color: var(--ink-3);
+	display: flex;
+	align-items: center;
+	gap: var(--s-2);
+}
+
+.hz-label::before {
+	content: '';
+	width: 1.25rem;
+	height: 1px;
+	background: var(--k4);
+	flex: none;
+}
+
+.hz-sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	overflow: hidden;
+	clip-path: inset(50%);
+	white-space: nowrap;
+	border: 0;
+}
+
+/* Label that also has to divide: the rule runs on to the edge of the column. */
+.hz-label.hz-span {
+	color: var(--ink-2);
+	letter-spacing: 0.18em;
+}
+
+.hz-label.hz-span::before {
+	width: 1.75rem;
+}
+
+.hz-label.hz-span::after {
+	content: '';
+	flex: 1;
+	height: 1px;
+	margin-left: var(--s-2);
+	background: linear-gradient(90deg, var(--k2), transparent 88%);
+}
+
+.hz-data {
+	font-family: var(--font-data);
+	font-size: var(--t--1);
+	font-variant-numeric: tabular-nums;
+	letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+@media print {
+	html,
+	body {
+		background: #fff;
+		color: #000;
+	}
+
+	.hz-rule {
+		background: #000;
+	}
+}

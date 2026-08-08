@@ -1,0 +1,226 @@
+.hz-page {
+	max-width: var(--page);
+	margin: 0 auto;
+	padding: 0 var(--s-4);
+}
+
+/* Centred, not left-aligned in --page. Headings and rules fill --page while text
+   stops at --measure, so a left-aligned measure put the body 48px left of the nav
+   and gave the page two competing centres. The overhang is symmetric now. */
+.hz-measure {
+	max-width: var(--measure);
+	margin-inline: auto;
+}
+
+/* Fraunces is instanced at opsz 144 — it is a display face here and nothing else. */
+.hz-display {
+	font-family: var(--font-display);
+	font-weight: 600;
+	line-height: 1.04;
+	letter-spacing: -0.02em;
+	text-wrap: balance;
+	color: var(--ink);
+}
+
+h1.hz-display {
+	font-size: var(--t-4);
+}
+
+h2.hz-display {
+	font-size: var(--t-3);
+	letter-spacing: -0.015em;
+}
+
+h3.hz-display {
+	font-size: var(--t-2);
+	letter-spacing: -0.01em;
+	line-height: 1.15;
+}
+
+.hz-lede {
+	font-size: var(--t-1);
+	line-height: 1.5;
+	color: var(--ink-2);
+	text-wrap: pretty;
+}
+
+.hz-prose p {
+	margin-bottom: var(--s-4);
+	text-wrap: pretty;
+}
+
+.hz-prose p:last-child {
+	margin-bottom: 0;
+}
+
+.hz-prose em {
+	font-style: italic;
+}
+
+.hz-prose strong {
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.hz-prose a {
+	text-decoration: underline;
+}
+
+.hz-prose ul {
+	list-style: none;
+	display: grid;
+	gap: var(--s-4);
+}
+
+.hz-quiet {
+	color: var(--ink-2);
+}
+
+.hz-faint {
+	color: var(--ink-3);
+}
+
+/* Markdown lands here from mdsvex, so these have to be global — scoped styles cannot reach it. */
+.hz-article {
+	max-width: var(--measure);
+	margin-inline: auto;
+	font-size: 1.25rem;
+	line-height: 1.7;
+}
+
+.hz-article > * + * {
+	margin-top: var(--s-4);
+}
+
+.hz-article h1,
+.hz-article h2,
+.hz-article h3 {
+	font-family: var(--font-display);
+	font-weight: 700;
+	line-height: 1.15;
+	letter-spacing: -0.015em;
+	color: var(--ink);
+	text-wrap: balance;
+	margin-top: var(--s-7);
+}
+
+.hz-article h1 {
+	font-size: var(--t-2);
+}
+
+.hz-article h2 {
+	font-size: var(--t-1);
+}
+
+.hz-article h3 {
+	font-size: 1.25rem;
+	font-style: italic;
+}
+
+.hz-article strong {
+	font-weight: 600;
+	color: var(--ink);
+}
+
+.hz-article em {
+	font-style: italic;
+}
+
+.hz-article a {
+	color: var(--k5);
+	text-decoration: underline;
+	text-decoration-color: var(--k3);
+}
+
+.hz-article a:hover {
+	text-decoration-color: var(--k5);
+}
+
+.hz-article blockquote {
+	border-left: 1px solid var(--k4);
+	padding-left: var(--s-4);
+	margin-left: 0;
+	font-style: italic;
+	color: var(--ink-2);
+}
+
+.hz-article ul,
+.hz-article ol {
+	padding-left: var(--s-4);
+}
+
+.hz-article li + li {
+	margin-top: var(--s-2);
+}
+
+.hz-article hr {
+	border: 0;
+	height: 1px;
+	background: linear-gradient(90deg, var(--k4), var(--k2) 60%, transparent);
+	margin: var(--s-7) 0;
+}
+
+.hz-article code {
+	font-family: var(--font-data);
+	font-size: 0.875em;
+	background: var(--k1);
+	color: var(--k5);
+	padding: 0.15em 0.4em;
+}
+
+.hz-article pre {
+	background: var(--k1);
+	border-left: 1px solid var(--k2);
+	padding: var(--s-4);
+	overflow-x: auto;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+}
+
+.hz-article pre code {
+	background: none;
+	color: var(--ink);
+	padding: 0;
+}
+
+.hz-article img {
+	width: 100%;
+	height: auto;
+}
+
+/* Verse. pre-line is scoped here rather than to all prose, so essays are free to wrap in source.
+   No hanging indent: it would indent every line after the first in a stanza, not just wraps. */
+/* Verse sets narrower than prose, so it needs centring even more than .hz-article
+   does — left-aligned it hung a full 3rem outside its own title. */
+.hz-verse {
+	max-width: 32rem;
+	margin-inline: auto;
+	font-size: 1.25rem;
+	line-height: 1.5;
+}
+
+.hz-verse p {
+	white-space: pre-line;
+	margin-top: var(--s-5);
+}
+
+.hz-verse p:first-child {
+	margin-top: 0;
+}
+
+.hz-verse em {
+	font-style: italic;
+}
+
+.hz-verse hr {
+	border: 0;
+	height: 1px;
+	background: linear-gradient(90deg, var(--k4), var(--k2) 60%, transparent);
+	margin: var(--s-6) 0;
+}
+
+@media (max-width: 30rem) {
+	.hz-verse {
+		font-size: 1.125rem;
+	}
+}

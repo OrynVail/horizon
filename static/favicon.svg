@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+	<!-- The limb, at 16px. Hex is literal: a favicon is its own document and cannot read tokens.css. -->
+	<defs>
+		<linearGradient id="limb" x1="0" y1="0" x2="1" y2="0">
+			<stop offset="0%" stop-color="#2b1e17" />
+			<stop offset="22%" stop-color="#7a3a16" />
+			<stop offset="50%" stop-color="#f2b15c" />
+			<stop offset="78%" stop-color="#c4701f" />
+			<stop offset="100%" stop-color="#2b1e17" />
+		</linearGradient>
+	</defs>
+	<rect width="32" height="32" rx="7" fill="#0a0a0d" />
+	<path d="M-1 24 Q 16 6 33 24" fill="none" stroke="url(#limb)" stroke-width="2.5" stroke-linecap="round" />
+</svg>

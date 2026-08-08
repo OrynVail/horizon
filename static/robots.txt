@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+# Set this to your own domain — this file is static and cannot read site.ts.
+Sitemap: https://horizon.example/sitemap.xml
